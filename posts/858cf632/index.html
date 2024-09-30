@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ubuntu22详细安装教程 | Welcome MyFriend !</title><meta name="author" content="haromeng"><meta name="copyright" content="haromeng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="适用于小白的ubuntu22虚拟机详细安装教程简介 Ubuntu 22.04 LTS，代号为Jammy Jellyfish（果酱水母），是Canonical于2022年4月21日发布的操作系统。这个版本标志着一次主要的版本升级，带来了许多新功能和改进。首先，桌面环境得到了显著的改进。Ubuntu 22.04 LTS采用了GNOME电源配置文件和流线型工作空间过渡，为用户提供了更加流畅的体验。此外，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu22详细安装教程">
+<meta property="og:url" content="http://haromeng.asia/posts/858cf632/index.html">
+<meta property="og:site_name" content="Welcome MyFriend !">
+<meta property="og:description" content="适用于小白的ubuntu22虚拟机详细安装教程简介 Ubuntu 22.04 LTS，代号为Jammy Jellyfish（果酱水母），是Canonical于2022年4月21日发布的操作系统。这个版本标志着一次主要的版本升级，带来了许多新功能和改进。首先，桌面环境得到了显著的改进。Ubuntu 22.04 LTS采用了GNOME电源配置文件和流线型工作空间过渡，为用户提供了更加流畅的体验。此外，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2024-09-30T07:20:42.000Z">
+<meta property="article:modified_time" content="2024-09-30T07:23:03.656Z">
+<meta property="article:author" content="haromeng">
+<meta property="article:tag" content="ubuntu, linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://haromeng.asia/posts/858cf632/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ubuntu22详细安装教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-30 15:23:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/loveimg/85633671_p1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 连接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Welcome MyFriend !"><span class="site-name">Welcome MyFriend !</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 连接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ubuntu22详细安装教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-30T07:20:42.000Z" title="发表于 2024-09-30 15:20:42">2024-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-30T07:23:03.656Z" title="更新于 2024-09-30 15:23:03">2024-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ubuntu22详细安装教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="适用于小白的ubuntu22虚拟机详细安装教程"><a href="#适用于小白的ubuntu22虚拟机详细安装教程" class="headerlink" title="适用于小白的ubuntu22虚拟机详细安装教程"></a>适用于小白的ubuntu22虚拟机详细安装教程</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>Ubuntu 22.04 LTS，代号为Jammy Jellyfish（果酱水母），是Canonical于2022年4月21日发布的操作系统。这个版本标志着一次主要的版本升级，带来了许多新功能和改进。<br>首先，桌面环境得到了显著的改进。Ubuntu 22.04 LTS采用了GNOME电源配置文件和流线型工作空间过渡，为用户提供了更加流畅的体验。此外，它还提供了强调色的选择功能，使用户能够更加个性化地设置自己的工作环境。<br>安全性也是Ubuntu 22.04 LTS的重点。为了提高安全性，它使用了新的加密算法迁移到OpenSSL v3。同时，Wayland作为默认显示服务器，为用户提供了更加现代的显示解决方案。借助Pipewire等技术，即使是屏幕共享等在Wayland下也能开箱即用，而且没有任何麻烦。对于那些使用NVIDIA显卡的计算机，Wayland甚至默认提供。<br>Ubuntu 22.04 LTS是一个长期支持（Long-Term Support）版本，这意味着它将得到长达五年的支持，直到2027年。这为用户提供了长期的稳定和安全更新。</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ol>
+<li>下载VMwaretools是为了能够在VMware虚拟机中有更好的使用体验，比如说主机与虚拟机复制粘贴等操作，以及分辨率的问题，</li>
+<li>更换镜像源是因为Ubuntu默认的下载地址是在国外，更换后下载速度更快</li>
+<li>有时候因为屏幕展现的画面太小可以按住，<code>alt</code>+<code>F7</code>拖动窗口</li>
+<li>Linux在输入密码的时候不会显示</li>
+</ol>
+<h2 id="下载镜像文件"><a href="#下载镜像文件" class="headerlink" title="下载镜像文件"></a>下载镜像文件</h2><p>由于Ubuntu官方的镜像下载的比较慢，所以我这里推荐使用清华或者是阿里的镜像源<br>下载地址：</p>
+<p>清华：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">https://mirrors.tuna.tsinghua.edu.cn/</a></p>
+<p>阿里：<a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/ubuntu/">https://mirrors.aliyun.com/ubuntu/</a></p>
+<p>这里以清华为例：</p>
+<ol>
+<li>点击清华的网址，搜索Ubuntu</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201203808324.png" alt="image-20231201203808324" style="zoom:67%;" /></p>
+<ol>
+<li>点击ubuntu-releases<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201203859885.png" alt="image-20231201203859885" style="zoom:67%;" /></li>
+<li>选择ubuntu22.04<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201203939648.png" alt="image-20231201203939648" style="zoom:67%;" /></li>
+<li>点击ubuntu-22.04.3-desktop-amd64.iso 开始下载<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204009314.png" alt="image-20231201204009314" style="zoom:67%;" /></li>
+</ol>
+<h2 id="安装VMware虚拟机软件"><a href="#安装VMware虚拟机软件" class="headerlink" title="安装VMware虚拟机软件"></a>安装VMware虚拟机软件</h2><h3 id="下载VMware安装包"><a href="#下载VMware安装包" class="headerlink" title="下载VMware安装包"></a>下载VMware安装包</h3><p>这里提供两种下载方式，一种是在官网下载，另一种是在联想应用商店下载(我经常用的是在联想应用商店下载，因为操作比较方便)</p>
+<ol>
+<li><p>VMware软件下载地址：<a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html![](https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201194727010.png">https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html![](https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201194727010.png</a>)<br>点击立即下载windows版本的VMware</p>
+</li>
+<li><p>在联想应用商店下载</p>
+</li>
+</ol>
+<ul>
+<li>浏览器搜索联想应用商店官网</li>
+<li>点击进入，搜索VMware</li>
+<li>点击下载</li>
+</ul>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201195003691.png" alt="image-20231201195003691"></p>
+<h3 id="安装VMware软件"><a href="#安装VMware软件" class="headerlink" title="安装VMware软件"></a>安装VMware软件</h3><ol>
+<li>点击下一步</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202130767.png" alt="image-20231201202130767" style="zoom: 67%;" /></p>
+<ol>
+<li>同意许可证，点击下一步</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202211757.png" alt="image-20231201202211757" style="zoom: 67%;" /></p>
+<ol>
+<li>自定义安装，选择自己的安装位置</li>
+</ol>
+<ul>
+<li><p>点击更改<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202251590.png" alt="image-20231201202251590" style="zoom: 67%;" /></p>
+</li>
+<li><p>选择自己要安装的文件夹（这里我默认在C盘了）之后点击下一步</p>
+</li>
+</ul>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202658828.png" alt="image-20231201202658828" style="zoom:67%;" /></p>
+<p>关闭启动时检测更新，关闭提升计划</p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202727683.png" alt="image-20231201202727683" style="zoom:67%;" /></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202745431.png" alt="image-20231201202745431"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202759198.png" alt="image-20231201202759198"></p>
+<p>点击许可证</p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201202857149.png" alt="image-20231201202857149"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201203114918.png" alt="image-20231201203114918" style="zoom:67%;" /></p>
+<p>上网搜索VMware17许可证密钥，这里我使用的是：<code>MC60H-DWHD5-H80U9-6V85M-8280D</code></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201203051164.png" alt="image-20231201203051164"></p>
+<p>安装之后会要求重启，点击重启。</p>
+<h3 id="激活软件"><a href="#激活软件" class="headerlink" title="激活软件"></a>激活软件</h3><ol>
+<li>右键以管理员身份运行</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201203410637.png" alt="image-20231201203410637"></p>
+<h2 id="安装ubuntu22-04"><a href="#安装ubuntu22-04" class="headerlink" title="安装ubuntu22.04"></a>安装ubuntu22.04</h2><ol>
+<li><p>点击创建新的虚拟机：</p>
+<p> <img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204226306.png" alt="image-20231201204226306"></p>
+</li>
+<li><p>选择自定义(高级)</p>
+<p> <img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204309747.png" alt="image-20231201204309747"></p>
+</li>
+<li><p>默认，选择下一步<br> <img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204340029.png" alt="image-20231201204340029"></p>
+</li>
+<li><p>选择稍后安装操作系统<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204446944.png" alt="image-20231201204446944"></p>
+</li>
+<li><p>选择Linux版本Ubuntu 64位<br> <img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204556872.png" alt="image-20231201204556872"></p>
+</li>
+<li><p>选择你ubuntu的安装位置</p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204651987.png" alt="image-20231201204651987"></p>
+<ol>
+<li>分配处理器的个数,这里建议分配的多一点,可以提高虚拟机的性能,加开安装速度</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204707009.png" alt="image-20231201204707009"></p>
+<ol>
+<li>就按照虚拟机默认的内存配置就行</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204719765.png" alt="image-20231201204719765"></p>
+<p>9.以下的对照默认就行</p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204728670.png" alt="image-20231201204728670"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204738288.png" alt="image-20231201204738288"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204746880.png" alt="image-20231201204746880"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204753903.png" alt="image-20231201204753903"></p>
+<ol>
+<li>注意,这里需要点击立即分配所有磁盘空间,将虚拟磁盘存储为单个文件以方便之后的扩容,推荐40G或是50G</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204807322.png" alt="image-20231201204807322"></p>
+<p>11.点击下一步</p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204834210.png" alt="image-20231201204834210"></p>
+<ol>
+<li>!!!!!!重点,这里需要点击自定义硬件</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204843418.png" alt="image-20231201204843418"></p>
+<ol>
+<li>选择自动检测,点击使用ISO影像文件,就是刚才下载的4GB多的后缀结尾是ISO的文件</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201204906496.png" alt="image-20231201204906496"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201210333231.png" alt="image-20231201210333231"></p>
+<ol>
+<li>开启此安装虚拟机</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201210423733.png" alt="image-20231201210423733"></p>
+<ol>
+<li>使用键盘控制到Try or Install Ubuntu,点击回车键</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201210500704.png" alt="image-20231201210500704"></p>
+<ol>
+<li>选择中文简体点击安装Ubuntu<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201211329489.png" alt="image-20231201211329489"></li>
+</ol>
+</li>
+<li><p>点击继续</p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201211439133.png" alt="image-20231201211439133"></p>
+</li>
+<li><p>继续下一步<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201211501316.png" alt="image-20231201211501316"></p>
+</li>
+<li><p>选择继续现在安装,注意:这里是虚拟机,如果以后在安装双系统的话千万千万必不要点这个选项<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201211705297.png" alt="image-20231201211705297"></p>
+</li>
+<li>地区上海,点击继续<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201211751430.png" alt="image-20231201211751430"></li>
+<li>设置账号密码:<ul>
+<li>建议将密码设置的简单一点,以后在终端输入命令的时候会需要你的用户密码</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201211942456.png" alt="image-20231201211942456"></p>
+<ol>
+<li>等待几分钟便可完成</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201212133851.png" alt="image-20231201212133851"></p>
+<ol>
+<li>等出现现在重启后,点击重启然后,右击标签页,重新启动虚拟机</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201212509258.png" alt="image-20231201212509258"></p>
+<ol>
+<li><p>输入密码便可进入Ubuntu的操作界面</p>
+<h2 id="安装VMwaretools"><a href="#安装VMwaretools" class="headerlink" title="安装VMwaretools"></a>安装VMwaretools</h2></li>
+<li><p>右击标签页点击安装VMwaretools（有些人可能这个选项是黑色的，跳到<code>7</code>继续看）</p>
+</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201213148896.png" alt="image-20231201213148896"></p>
+<ol>
+<li>双击磁盘</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201213207367.png" alt="image-20231201213207367"></p>
+<ol>
+<li>继续双击后缀为.gz的文件夹提取至桌面</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231202231210130.png" alt="image-20231202231210130"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231202231239870.png" alt="image-20231202231239870"></p>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231202231327711.png" alt="image-20231202231327711"></p>
+<ol>
+<li>然后桌面上就会出现这个文件，进入文件夹,右键在终端中打开</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231202231443575.png" alt="image-20231202231443575"></p>
+<ol>
+<li><p>输入一下命令回车</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ./vmware-install.pl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入yes一直点回车</p>
+</li>
+<li><p>如果标签页像这样是黑色的</p>
+<p> <img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231202230200056.png" alt="image-20231202230200056"></p>
+</li>
+</ol>
+<ul>
+<li>关闭客户端</li>
+<li>打开设置选择使用物理驱动器</li>
+<li><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231202230847310.png" alt="image-20231202230847310" style="zoom:50%;" /></li>
+<li>点击开启次虚拟机，立马点击安装VMwaretools就可以了</li>
+</ul>
+<h2 id="切换国内源"><a href="#切换国内源" class="headerlink" title="切换国内源"></a>切换国内源</h2><ol>
+<li><p>点击左下角软件页面找到软件和更新</p>
+</li>
+<li><p>点击位于中国的服务器,点击其他,</p>
+</li>
+<li><p>这里我选择的是阿里云的地址</p>
+</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201213650246.png" alt="image-20231201213650246"></p>
+<ol>
+<li>点击关闭,重新载入</li>
+</ol>
+<p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img%5Cimage-20231201213751753.png" alt="image-20231201213751753"></p>
+<ol>
+<li>更新软件源:</li>
+</ol>
+<p>按住<code>ctrl</code>+<code>alt</code>+<code>t</code>打开终端,依次输入:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="实现主机与虚拟机的复制粘贴"><a href="#实现主机与虚拟机的复制粘贴" class="headerlink" title="实现主机与虚拟机的复制粘贴"></a>实现主机与虚拟机的复制粘贴</h2><p>有些虚拟机无法与主机之间进行交互可以用这种方法</p>
+<p>按住<code>ctrl</code>+<code>alt</code>+<code>t</code>打开终端,依次输入:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get autoremove open-vm-tools</span><br><span class="line"><span class="built_in">sudo</span> apt-get install open-vm-tools</span><br><span class="line"><span class="built_in">sudo</span> apt-get install open-vm-tools-desktop</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://haromeng.asia">haromeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://haromeng.asia/posts/858cf632/">http://haromeng.asia/posts/858cf632/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://haromeng.asia" target="_blank">Welcome MyFriend !</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ubuntu-linux/">ubuntu, linux</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/fe71c777/" title="windows配置java环境"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">windows配置java环境</div></div></a></div><div class="next-post pull-right"><a href="/posts/9896/" title="尝试2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">尝试2</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/loveimg/85633671_p1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">haromeng</div><div class="author-info__description">这是我的技术栈</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/haromeng"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/m0_73801253?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=728831102&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/3400484626@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E4%BA%8E%E5%B0%8F%E7%99%BD%E7%9A%84ubuntu22%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">适用于小白的ubuntu22虚拟机详细安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">下载镜像文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.4.</span> <span class="toc-text">安装VMware虚拟机软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDVMware%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-number">1.4.1.</span> <span class="toc-text">下载VMware安装包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85VMware%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.4.2.</span> <span class="toc-text">安装VMware软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.4.3.</span> <span class="toc-text">激活软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ubuntu22-04"><span class="toc-number">1.5.</span> <span class="toc-text">安装ubuntu22.04</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85VMwaretools"><span class="toc-number">1.6.</span> <span class="toc-text">安装VMwaretools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90"><span class="toc-number">1.7.</span> <span class="toc-text">切换国内源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%B8%BB%E6%9C%BA%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4"><span class="toc-number">1.8.</span> <span class="toc-text">实现主机与虚拟机的复制粘贴</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/fe71c777/" title="windows配置java环境"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="windows配置java环境"/></a><div class="content"><a class="title" href="/posts/fe71c777/" title="windows配置java环境">windows配置java环境</a><time datetime="2024-09-30T07:25:38.000Z" title="发表于 2024-09-30 15:25:38">2024-09-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/858cf632/" title="ubuntu22详细安装教程"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ubuntu22详细安装教程"/></a><div class="content"><a class="title" href="/posts/858cf632/" title="ubuntu22详细安装教程">ubuntu22详细安装教程</a><time datetime="2024-09-30T07:20:42.000Z" title="发表于 2024-09-30 15:20:42">2024-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/9896/" title="尝试2">尝试2</a><time datetime="2024-09-30T02:00:52.000Z" title="发表于 2024-09-30 10:00:52">2024-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/59461/" title="尝试">尝试</a><time datetime="2024-09-30T01:58:48.000Z" title="发表于 2024-09-30 09:58:48">2024-09-30</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/posts/51705/" title="test2">test2</a><time datetime="2024-09-29T14:00:01.000Z" title="发表于 2024-09-29 22:00:01">2024-09-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By haromeng</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">豫ICP备2024052202号-1</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
