@@ -4,6 +4,67 @@
   
     
     <entry>
+      <title>归并排序</title>
+      <link href="/posts/1599bffe.html"/>
+      <url>/posts/1599bffe.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>将一个需要排序的数不断地从中间分开,分成两个数组. 之后对两个数组进行比较, 将其合并为一个数组.</p><ol><li>找到分界点<code>(l + r) / 2</code></li><li>递归排序 left和right</li><li>归并,合二为一<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2></li></ol><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">merge_sort</span>(q, l, mid);</span><br><span class="line">    <span class="built_in">merge_sort</span>(q, mid + <span class="number">1</span>, r);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> k = <span class="number">0</span>, i = l, j = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r)</span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt;= q[j]) tmp[k ++ ] = q[i ++ ];</span><br><span class="line">        <span class="keyword">else</span> tmp[k ++ ] = q[j ++ ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid) tmp[k ++ ] = q[i ++ ];</span><br><span class="line">    <span class="keyword">while</span> (j &lt;= r) tmp[k ++ ] = q[j ++ ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = l, j = <span class="number">0</span>; i &lt;= r; i ++, j ++ ) q[i] = tmp[j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>快速排序</title>
+      <link href="/posts/ff8068c0.html"/>
+      <url>/posts/ff8068c0.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>快速排序是分治的思想，步骤：</p><ol><li>确定分界点，是随机选取的，也可以是q[l]，q[(l/r)/2],q[r]，主意规定的有可能会导致时间复杂度变为 $O(n)$</li><li>调整范围，确定分界点以后左边的数小于分界点，右边的数大于分界点</li><li>归并处理左右两端</li></ol><p>优化算法，分别取两端<code>i</code>和<code>j</code>，<code>i</code>和<code>j</code>分别向中间靠拢，当出现<code>i</code>与<code>j</code>，比较不符时，更换对应下标的值</p><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> x = q[<span class="built_in">rand</span>() % (r - l + <span class="number">1</span>) + l], i = l - <span class="number">1</span>, j = r + <span class="number">1</span>;<span class="comment">//防止越界</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">            i++;</span><br><span class="line">        <span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">            j--;</span><br><span class="line">        <span class="keyword">while</span> (q[j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(q, l, i - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">quick_sort</span>(q, i, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>选择hexo的原因</title>
+      <link href="/posts/9cec6b1a.html"/>
+      <url>/posts/9cec6b1a.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="选择hexo作为搭建博客的原因"><a href="#选择hexo作为搭建博客的原因" class="headerlink" title="选择hexo作为搭建博客的原因"></a>选择hexo作为搭建博客的原因</h1><h2 id="为什么选择"><a href="#为什么选择" class="headerlink" title="为什么选择"></a>为什么选择</h2><p>最重要的也是最关键的就是太本身就是用 <mark>markdown</mark> 写的,我当时就是想要做一个博客栈. 然后内容都是用 <mark>markdown</mark> 写的, 我先后使用了wordpress, halo. 不得不说他们设计的确实很不错, wordpress的插件, 主题都很多. 可供选择的也很多,自定义性也很高; halo页面美观简洁, 内容挺丰富的. 但是我还是喜欢markdown</p><h2 id="使用markdown"><a href="#使用markdown" class="headerlink" title="使用markdown"></a>使用markdown</h2><p>在使用hexo建站之前我就写过很多的笔记, 这些笔记也都是用markdown来写的. 一方面时自己已经完全习惯了用markdown来写文章, 另一方面我很多的笔记之后都会陆陆续续转移到网站上来, 再者markdown对于我这种编辑出身的确实很好</p><h2 id="hexo的优势"><a href="#hexo的优势" class="headerlink" title="hexo的优势"></a>hexo的优势</h2><ul><li>自定义性高,对于学习前端的自己可以添加一些自己想要的功能</li><li>内容简介</li><li>有我非常喜欢的主题butterfly</li><li>教程多</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>windows配置java环境</title>
       <link href="/posts/fe71c777.html"/>
       <url>/posts/fe71c777.html</url>
@@ -33,35 +94,11 @@
       
         <tags>
             
-            <tag> ubuntu, linux </tag>
+            <tag> ubuntu </tag>
+            
+            <tag> linux </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>尝试2</title>
-      <link href="/posts/9896.html"/>
-      <url>/posts/9896.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>尝试</title>
-      <link href="/posts/59461.html"/>
-      <url>/posts/59461.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3>]]></content>
-      
-      
       
     </entry>
     
