@@ -4,13 +4,21 @@
   
     
     <entry>
-      <title></title>
-      <link href="/posts/0.html"/>
-      <url>/posts/0.html</url>
+      <title>将自己域名绑定到GitHub个人博客中</title>
+      <link href="/posts/e1ae4741.html"/>
+      <url>/posts/e1ae4741.html</url>
       
         <content type="html"><![CDATA[<h2 id="解析域名到GitHub的ipv4地址"><a href="#解析域名到GitHub的ipv4地址" class="headerlink" title="解析域名到GitHub的ipv4地址"></a>解析域名到GitHub的ipv4地址</h2><p>进入购买域名厂商的管理页面</p><h3 id="解析ip地址"><a href="#解析ip地址" class="headerlink" title="解析ip地址"></a>解析ip地址</h3><p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img/20250304161450.png" alt="image.png"></p><ol><li>选择添加记录，可以选择使用<code>@</code>或者<code>www</code>，我这里使用的是二级域名<br> <img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img/20250304162246.png" alt="image.png"></li><li>将自己的域名解析到对应的IP当中,因为腾讯云最多只能绑定两个ip地址,所以我就填写了前两个ip <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">185.199.108.153 </span><br><span class="line">185.199.109.153 </span><br><span class="line">185.199.110.153 </span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure></li></ol><h3 id="使用CNAME-推荐"><a href="#使用CNAME-推荐" class="headerlink" title="使用CNAME(推荐)"></a>使用CNAME(推荐)</h3><p>使用A类解析可能会导致站点无法访问,推荐使用CNAME记录<br><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img/20250304164331.png" alt="image.png"></p><h2 id="允许域名访问GitHub"><a href="#允许域名访问GitHub" class="headerlink" title="允许域名访问GitHub"></a>允许域名访问GitHub</h2><h3 id="设置自己的博客仓库"><a href="#设置自己的博客仓库" class="headerlink" title="设置自己的博客仓库"></a>设置自己的博客仓库</h3><p>进入GitHub仓库(一般是<code>xxx.github.io</code>),进入pages设置页面,找到custom domain,输入自己的域名</p><p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img/20250304162858.png" alt="image.png"></p><h2 id="添加hhtps认证"><a href="#添加hhtps认证" class="headerlink" title="添加hhtps认证"></a>添加hhtps认证</h2><p>如果上面设置的都没问题的话,等待几分钟即可选择<strong>Enforce HTTPS</strong></p><p><img src="https://ylgg.oss-cn-wuhan-lr.aliyuncs.com/img/20250304163452.png" alt="image.png"></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> 域名 </tag>
+            
+        </tags>
       
     </entry>
     
